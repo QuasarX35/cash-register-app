@@ -191,7 +191,6 @@ const calcChangeBreakdown3 = change => {
 }
 
 const displayChange = paymentAmt => {
-    let resultStr = "";
     const change = parseFloat((paymentAmt - price).toFixed(2));
     document.querySelector('#display-section h2').innerHTML = `<i class="fa-regular fa-money-bill-1"></i>Change Due: $${change}`;
     changeDueDiv.textContent = calcChangeBreakdown3(change);
