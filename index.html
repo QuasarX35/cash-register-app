@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/817844b7ec.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <title>Cash Register</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="main-header">Cash Register App</h1>
+    </header>
+    <main>
+        <div class="left-container">
+            <div id="input-area">
+                <form onsubmit="return checkInput(event)">
+                    <label for="cash"><i class="fa-solid fa-hand-holding-dollar"></i>Payment</label>
+                    <div id="input">
+                        <p>$</p><input type="number" step="0.01" id="cash" placeholder="payment amount..." />
+                    </div>
+                    <button type="button" id="purchase-btn">Pay</button>
+                </form>
+            </div>
+
+            <div id="display-section">
+                <p id="price"><strong>Item Price:</strong> </p>
+                <h2><i class="fa-regular fa-money-bill-1"></i>Change Due</h2>
+                <pre><div id="change-due"></div></pre>
+            </div>
+        </div>
+        <div id="cash-register">
+            <h2><i class="fa-solid fa-cash-register"></i>Cash Register</h2>
+            <p><strong>Total Amount Left: </strong><span id="total-amount-left"></span></p>
+            <button id="show-dollar-value-btn">Show Dollar Value</button>
+
+            <!-- pop-up dialog box to show dollar values of units -->
+            <dialog id="values-dialog" hidden>
+                <h3>Dollar Values</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Value ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Penny</td>
+                            <td>0.01</td>
+                        </tr>
+                        <tr>
+                            <td>Nickel</td>
+                            <td>0.05</td>
+                        </tr>
+                        <tr>
+                            <td>Dime</td>
+                            <td>0.1</td>
+                        </tr>
+                        <tr>
+                            <td>Quarter</td>
+                            <td>0.25</td>
+                        </tr>
+                        <tr>
+                            <td>Ones</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Fives</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Tens</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Twenties</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Hundreds</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <button id="values-dialog-close" type="button">Close</button>
+                </div>
+            </dialog>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Count</th>
+                        <th>Amount Left ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penny</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Nickel</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Dime</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Quarter</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Ones</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Fives</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Tens</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Twenties</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                    <tr>
+                        <td>Hundreds</td>
+                        <td class="currency-count"></td>
+                        <td class="amount-left"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>Made by <a href="https://github.com/QuasarX35/palindrome-checker-website" class="github-link">QuasarX35</a> ©
+            2024. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

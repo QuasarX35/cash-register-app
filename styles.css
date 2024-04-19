@@ -1,0 +1,293 @@
+:root {
+    --text: #150201;
+    --background: #FFFFFF;
+    --primary: #F95700;
+    --secondary: #8cc9e3;
+    --accent: #52a8f5;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 62.5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1100px) {
+    body {
+        height: 100vh;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+i {
+    margin-right: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.errorMsg {
+    font-size: 0.9rem;
+    margin-bottom: .5em;
+    margin-top: -1em;
+}
+
+header {
+    flex: 0 1 auto;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-header {
+    border-bottom: 3px solid var(--primary);
+}
+
+main {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
+@media screen and (min-width:1100px) {
+    main {
+        width: 100%;
+        gap: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    gap: 4em;
+}
+
+#input-area form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: .4em;
+}
+
+#input-area label {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+#input-area #input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+}
+
+#input-area #input p {
+    font-size: 1.2rem;
+    margin-top: 0.9em;
+}
+
+#cash {
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text);
+    text-align: center;
+    width: 70%;
+}
+
+#cash:focus {
+    border-bottom: 2px solid var(--primary);
+}
+
+/* https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery */
+#cash:focus::placeholder {
+    color: transparent;
+}
+
+#purchase-btn {
+    border-radius: 50em;
+    width: 6em;
+    height: 1.8em;
+    border: 1.5px solid var(--primary);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+#purchase-btn:active {
+    background-color: var(--primary);
+    color: var(--background);
+    transition: transform 0.2s;
+    transform: translateY(2px);
+}
+
+#display-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#price {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#display-section h2 {
+    margin-top: -.5em;
+    text-align: center;
+}
+
+#change-due {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-wrap: wrap;
+    padding: 0 3.5em;
+}
+
+#cash-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+#cash-register p {
+    margin-top: -.5em;
+    font-size: 1.3rem;
+}
+
+#show-dollar-value-btn {
+    margin-top: -.5em;
+    margin-bottom: 1em;
+    border: none;
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: 5px;
+    width: 90%;
+    height: 2em;
+    box-shadow: 5px 5px 10px #b3b1b1;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+#show-dollar-value-btn:active {
+    box-shadow: none;
+    transition: all 0.2s;
+}
+
+#values-dialog {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 3em;
+    gap: 1em;
+    border: 1px solid var(--text);
+    border-radius: 10px;
+}
+
+#values-dialog h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+#values-dialog td {
+    font-size: 1.2rem;
+}
+
+#values-dialog-close {
+    border: none;
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: 5px;
+    height: 2em;
+    box-shadow: 5px 5px 10px #b3b1b1;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.2rem;
+}
+
+#values-dialog-close:active {
+    box-shadow: none;
+    transition: all 0.2s;
+}
+
+#cash-register table {
+    font-size: 1rem;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    border-spacing: 0;
+}
+
+#cash-register table thead th {
+    background-color: var(--accent);
+    padding: 1em 1em;
+}
+
+thead th:first-child {
+    border-top-left-radius: 5px;
+}
+    
+table th:last-child {
+    border-top-right-radius: 5px;
+}
+
+#cash-register table tbody td {
+    padding: 0.4em 1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+footer {
+    flex: 0 1 auto;
+    color: var(--text);
+    font-size: 0.8rem;
+    bottom: 1em;
+    text-align: center;
+    background-color: var(--secondary);
+    width: 100%;
+    margin: 0;
+    border-top: 1.5px solid var(--text);
+}
+
+.github-link {
+    color: var(--primary);
+}
