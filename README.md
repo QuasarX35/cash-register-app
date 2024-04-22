@@ -1,5 +1,5 @@
 # Cash Register App
-This JavaScript application simulates a basic cash register system. It was built as a certification project for the FreeCodeCamp Javascript Algorithms and Data Structures course. The application can be accessed [here]().
+This JavaScript application simulates a basic cash register system. It was built as a certification project for the FreeCodeCamp Javascript Algorithms and Data Structures course. The application can be accessed [here](https://kyze-cash-register.netlify.app).
 
 ![Screenshot of the website](./screenshots/screenshot1.png)
 
